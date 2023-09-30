@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function checkBlank(c1, msg) {
+            data = c1.value;
+
+            // alert(data);
+            l = data.length;
+
+            if (l == 0) {
+                alert(msg);
+                return false;
+            }
+            return true;
+        }
+
+        function checkForm(f1) {
+            with (f1) {
+                if (!checkBlank(unmtxt, "UserName can not be left blank")) {
+                    return false;
+                }
+                if (!checkBlank(passtxt, "Password can not be left blank")) {
+                    return false;
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <form name="frm1" method="post" action="processData.html">
+        UserID : <input type="text" name="unmtxt">
+        <br>
+        Password : <input type="password" name="passtxt">
+        <br>
+        <input type="submit" name="submit" value="Login" onclick="return checkForm(frm1)">
+    </form>
+
+</body>
+
+</html>

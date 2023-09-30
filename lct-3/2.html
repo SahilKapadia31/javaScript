@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="main.js"></script>
+
+    <script>
+        function checkForm(f1) {
+            with (f1) {
+                if (!checkBlank(unmtxt, "UserName can not be left blank")) {
+                    return false;
+                }
+                if (!checkPassLen(passtxt, "Password must contain atleast 8 characters!")) {
+                    return false;
+                }
+                if (!checkPassConfPass(passtxt, cptxt, "Pass and conf. pass must match!")) {
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="processData.html" method="post" name="frm1" onsubmit="return checkForm(frm1)">
+        UserID : <input type="text" name="unmtxt">
+        <br>
+        Password : <input type="password" name="passtxt">
+        <br>
+        Conf Password : <input type="password" name="cptxt">
+        <br>
+        <input type="submit" name="submit" value="Register">
+    </form>
+
+</body>
+
+</html>
