@@ -4,7 +4,7 @@ function checkBlank(c1, msg) {
 
     // alert(data);
     l = data.length;
-    
+
     if (l == 0) {
         alert(msg);
         return false;
