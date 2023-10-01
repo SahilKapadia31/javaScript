@@ -27,7 +27,7 @@ const y = {
 
 y['friend'] = "jay"
 y['name'] = "deep"
-console.log(a1)
+console.log(y)
 
 // Q-5 Write a JS program to create a word-meaning dictionary of 5 words.
 
