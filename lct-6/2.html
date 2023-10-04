@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function checkPerf(c1) {
+            n = parseInt(c1.value);
+            sessionStorage.setItem("num1", n);
+
+            sum = 0;
+            for (let i = 1; i < n; i++) {
+                if (n % i == 0) {
+                    sum += i;
+                }
+            }
+            if (sum == n) {
+                sessionStorage.setItem("answer", "The number is a perfect.");
+            }
+            else {
+                sessionStorage.setItem("answer", "The number is not a perfect.");
+            }
+            window.location = "show2.html";
+        }
+    </script>
+</head>
+
+<body>
+    <form method="post" name="frm1">
+        Enter Num: <input type="text" name="numtxt"><br>
+        <input type="button" value="Find Perfect" name="btn" onclick="checkPerf(numtxt)">
+    </form>
+</body>
+
+</html>

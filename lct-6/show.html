@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function dis() {
+            n = localStorage.getItem("num1");
+            a = localStorage.getItem("answer");
+            document.frm1.numtxt.value = n;
+            document.frm1.atxt.value = a;
+        }
+
+        function clrData() {
+            localStorage.removeItem("num1");
+            localStorage.removeItem("answer");
+            // localStorage.clear();  // it will remove all the localstorage 
+            window.location = "1.html";
+        }
+    </script>
+
+</head>
+
+<body>
+    <form method="post" name="frm1">
+        Enter num: <input type="text" name="numtxt"><br>
+        Ans: <input type="text" name="atxt"><br>
+        <input type="button" value="clear" name="btn" onclick="clrData()">
+    </form>
+    <script>
+        dis();
+    </script>
+</body>
+
+</html>

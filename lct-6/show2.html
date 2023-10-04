@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function dis() {
+            n = sessionStorage.getItem("num1");
+            a = sessionStorage.getItem("answer");
+
+            document.frm1.numtxt.value = n;
+            document.frm1.atxt.value = a;
+        }
+        function clrData() {
+            window.location = "2.html";
+        }
+    </script>
+</head>
+
+<body>
+    <form method="post" name="frm1">
+        Enter Num: <input type="text" name="numtxt"><br>
+        Ans : <input type="text" name="atxt"><br>
+        <input type="button" value="clear" name="btn" onclick="clrData()">
+    </form>
+    <script>
+        dis();
+    </script>
+</body>
+
+</html>
