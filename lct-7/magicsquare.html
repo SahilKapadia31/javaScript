@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function init1() {
+            localStorage.setItem("counter", 0);
+        }
+        init1();
+
+        function takeChance(c1) {
+            len = c1.value.length;
+
+            if (len == 0) {
+                n = localStorage.getItem("counter");
+                n++;
+                c1.value = n;
+                localStorage.setItem("counter", n);
+
+                if (n == 9) {
+                    if (checkWin()) {
+                        alert("Its a Magic Square,You Win!");
+                    }
+                    else {
+                        alert("Its not a Magic Square!");
+                    }
+                }
+            }
+            else {
+                alert("Illegal move!")
+            }
+        }
+
+        function checkWin() {
+            x = document.frm1.btn;
+            // rows
+            sum = 0;
+            for (let i = 0; i <= 2; i++) {
+                sum += parseInt(x[i].value);
+            }
+            if (sum != 15) {
+                return false;
+            }
+
+            sum = 0;
+            for (let i = 3; i <= 5; i++) {
+                sum += parseInt(x[i].value);
+            }
+            if (sum != 15) {
+                return false;
+            }
+
+            sum = 0;
+            for (let i = 6; i <= 8; i++) {
+                sum += parseInt(x[i].value);
+            }
+            if (sum != 15) {
+                return false;
+            }
+
+            // column
+            sum = 0;
+            for (let i = 0; i <= 6; i += 3) {
+                sum += parseInt(x[i].value);
+            }
+            if (sum != 15) {
+                return false;
+            }
+
+            sum = 0;
+            for (let i = 1; i <= 7; i += 3) {
+                sum += parseInt(x[i].value);
+            }
+            if (sum != 15) {
+                return false;
+            }
+
+            sum = 0;
+            for (let i = 2; i <= 8; i += 3) {
+                sum += parseInt(x[i].value);
+            }
+            if (sum != 15) {
+                return false;
+            }
+
+            //Diagonal
+
+            sum = 0;
+            for (let i = 0; i <= 8; i += 4) {
+                sum += parseInt(x[i].value);
+            }
+            if (sum != 15) {
+                return false;
+            }
+
+            // Reverse diagonal
+            sum = 0;
+            for (let i = 2; i <= 6; i += 2) {
+                sum += parseInt(x[i].value);
+            }
+            if (sum != 15) {
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form name="frm1">
+        <input type="button" name="btn" onclick="takeChance(this)">
+        <input type="button" name="btn" onclick="takeChance(this)">
+        <input type="button" name="btn" onclick="takeChance(this)"><br>
+        <input type="button" name="btn" onclick="takeChance(this)">
+        <input type="button" name="btn" onclick="takeChance(this)">
+        <input type="button" name="btn" onclick="takeChance(this)"><br>
+        <input type="button" name="btn" onclick="takeChance(this)">
+        <input type="button" name="btn" onclick="takeChance(this)">
+        <input type="button" name="btn" onclick="takeChance(this)">
+    </form>
+</body>
+
+</html>

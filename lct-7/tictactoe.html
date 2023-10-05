@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function init() {
+            localStorage.setItem("chance_counter", 0);
+        }
+        init();
+
+
+        function takeChance(c1) {
+
+            if (c1.value == null || c1.value == "") {
+                count = parseInt(localStorage.getItem("chance_counter"));
+                count++;
+                if (count % 2 == 0) {
+                    c1.value = "O";
+                }
+                else {
+                    c1.value = "X";
+                }
+                localStorage.setItem("chance_counter", count);
+
+            }
+            else {
+                alert("Illegal move!");
+            }
+
+
+        }
+
+
+    </script>
+
+
+</head>
+
+<body>
+    <form name="frm1">
+
+        <input type="button" name="btn" onclick="takeChance(this)" />
+        <input type="button" name="btn" onclick="takeChance(this)" />
+        <input type="button" name="btn" onclick="takeChance(this)" /><br />
+        <input type="button" name="btn" onclick="takeChance(this)" />
+        <input type="button" name="btn" onclick="takeChance(this)" />
+        <input type="button" name="btn" onclick="takeChance(this)" /><br />
+        <input type="button" name="btn" onclick="takeChance(this)" />
+        <input type="button" name="btn" onclick="takeChance(this)" />
+        <input type="button" name="btn" onclick="takeChance(this)" /><br />
+
+
+
+
+    </form>
+</body>
+
+</html>

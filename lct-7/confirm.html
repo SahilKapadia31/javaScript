@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function findOddEven(num) {
+            n = parseInt(num);
+
+            if (n % 2 == 0) {
+                alert(n + " is even!");
+            }
+            else {
+                alert(n + " is odd!");
+            }
+
+            if (confirm("Do you wish to continue?")) {
+                window.location = "confirm1.html";
+            }
+            else {
+                window.location = "bye.html";
+            }
+
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+
+
+    <form name="frm1" method="post">
+
+
+        Num :<input type="text" name="ntxt" /><br />
+
+        <input type="button" name="btn" value="Find OddEven" onclick="findOddEven(ntxt.value)" />
+
+
+    </form>
+
+
+</body>
+
+</html>
