@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function init1() {
+
+
+            a = Math.random() * 11;
+            b = Math.ceil(a);
+
+            localStorage.setItem("thenum", b);
+
+            localStorage.setItem("chances", 3);
+            n = localStorage.getItem("chances");
+
+            document.frm1.ctxt.value = n;
+
+
+        }
+
+        function takeChance(c1) {
+            n = parseInt(c1.value);
+            tn = parseInt(localStorage.getItem("thenum"));
+            c = parseInt(localStorage.getItem("chances"));
+            if (c == 0) {
+
+                if (confirm("Do you wish to continue?")) {
+                    localStorage.clear();
+                    document.frm1.n1txt.value = "";
+                    init1();
+                    return;
+                }
+            }
+            else if (n == tn) {
+                c--;
+                alert("You Win!!");
+            }
+            else if (n < tn) {
+                alert("The guessed number is too low!");
+                c--;
+                document.frm1.n1txt.value = "";
+            }
+            else {
+                alert("The guessed number is too high!");
+                c--;
+                document.frm1.n1txt.value = "";
+            }
+
+            localStorage.setItem("chances", c);
+            document.frm1.ctxt.value = c;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <form name="frm1" method="post">
+
+        Guess the num:<input type="text" name="n1txt" /><br />
+        <input type="button" value="Take Chance" name="btn" onclick="takeChance(n1txt)" /> <br />
+        Chances left :<input type="text" name="ctxt" />
+
+    </form>
+
+    <script>
+
+        init1();
+    </script>
+
+
+</body>
+
+</html>
