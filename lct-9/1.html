@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function pali1() {
+            digits = 0;
+            rev = 0;
+            x = parseInt(document.getElementById('n1txt').value);
+
+            n = x;
+            while (x != 0) {
+                x = parseInt(x / 10);
+                digits++;
+            }
+            x = n;
+            while (x != 0) {
+                r = x % 10;
+                rev = parseInt(rev) + r * parseInt(Math.pow(10, --digits));
+                // rev = parseInt(rev) + r * 10 ** --digits;
+                x = parseInt(x / 10);
+            }
+            if (rev == n) {
+                document.getElementById('n2txt').value = "Palindrome number!";
+                return;
+            }
+            document.getElementById('n2txt').value = "Not a palindrome number!";
+        }
+
+        function pali2() {
+            rev = 0;
+            x = parseInt(document.getElementById('n1txt').value);
+
+            n = x;
+            while (x != 0) {
+                r = x % 10;
+                rev = rev * 10 + r;
+                x = parseInt(x / 10);
+            }
+            if (rev == n) {
+                document.getElementById('n2txt').value = "Palindrome number!";
+                return;
+            }
+            document.getElementById('n2txt').value = "Not a palindrome number!";
+        }
+    </script>
+
+</head>
+
+<body>
+
+    No: <input type="text" id="n1txt"><br>
+    Ans: <input type="text" id="n2txt" disabled><br>
+    <input type="submit" value="Find Palindrome" name="btn" onclick="pali2()">
+
+</body>
+
+</html>
