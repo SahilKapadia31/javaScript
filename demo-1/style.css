@@ -1,0 +1,23 @@
+body {
+    background: rgb(141, 117, 179);
+    background: linear-gradient(176deg, rgba(141, 117, 179, 1) 0%, rgba(120, 145, 201, 1) 27%, rgba(100, 171, 223, 1) 86%);
+    background-repeat: no-repeat;
+}
+
+
+.card-img-right {
+    width: 60%;
+    background: scroll center url(img/1.jpg);
+    background-size: cover;
+}
+
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+}
+
+.btn-purple {
+    color: white !important;
+    background-color: #668cff !important;
+}

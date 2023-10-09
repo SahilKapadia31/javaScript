@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check1() {
+            x = document.getElementById('utxt').value;
+            y = document.getElementById('ptxt').value;
+            document.getElementById('d1').innerHTML = "";
+            document.getElementById('d2').innerHTML = "";
+
+            if (x == null || x == "") {
+                document.getElementById('d1').innerHTML = "Plz enter the user id!";
+                return false;
+            }
+            if (y == null || y == "") {
+                document.getElementById('d2').innerHTML = "Plz enter the password!";
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+    <form action="" name="frm1" onsubmit="return check1()">
+        User Id: <input type="text" id="utxt">
+        <span id="d1"></span>
+        <br>
+        Password: <input type="password" id="ptxt">
+        <span id="d2"></span>
+        <br>
+        <input type="submit" value="Login" name="sub">
+    </form>
+</body>
+
+</html>
