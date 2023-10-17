@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="playGame('rock')">Rock</button>
+    <button onclick="playGame('paper')">Paper</button>
+    <button onclick="playGame('scissors')">Scissors</button>
+
+    <script>
+        function playGame(playerMove) {
+            const computerMove = pickComputerMove();
+
+            let result = '';
+
+            if (playerMove === 'scissors') {
+                if (computerMove === 'rock') {
+                    result = 'You loss.';
+                }
+                else if (computerMove === 'paper') {
+                    result = 'You Win.';
+                }
+                else if (computerMove === 'scissors') {
+                    result = "It's a tie.";
+                }
+            }
+
+            else if (playerMove === 'paper') {
+                if (computerMove === 'rock') {
+                    result = 'You win';
+                }
+                else if (computerMove === 'paper') {
+                    result = "It's a tie.";
+                }
+                else if (computerMove === 'scissors') {
+                    result = 'You loss.'
+                }
+            }
+
+            else if (playerMove === 'rock') {
+                if (computerMove === 'rock') {
+                    result = "It's a tie";
+                }
+                else if (computerMove === 'paper') {
+                    result = 'You loss.';
+                }
+                else if (computerMove === 'scissors') {
+                    result = 'You Win.';
+                }
+            }
+
+            alert(`You picked ${playerMove}.\n Computer picked ${computerMove}.\n Result ${result}.`)
+
+        }
+
+        function pickComputerMove() {
+            const randomNum = Math.floor(Math.random() * 3);
+            let computerMove = "";
+
+            if (randomNum === 0) {
+                computerMove = "rock";
+            }
+            else if (randomNum === 1) {
+                computerMove = "paper";
+            }
+            else if (randomNum === 2) {
+                computerMove = "scissors";
+            }
+            return computerMove;
+        }
+    </script>
+</body>
+
+</html>
